@@ -1,0 +1,35 @@
+<div class="b"><mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer mode="over" class="mobile-drawer">
+    <div class="drawer-header">Baarrun</div>
+    <mat-nav-list>
+      <a mat-list-item href="#home">Home</a>
+         <a mat-list-item href="#about" class="text-light">About</a>
+      <a mat-list-item href="#projects">Projects</a>
+      <a mat-list-item href="#skills">Skills</a>
+      <a mat-list-item href="#contact">Contact</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="navbar">
+      <span class="logo">Muhammad Baarrun bin Jamal</span>
+
+  <span class="spacer"></span>
+
+  <nav class="nav-links">
+    <a mat-button href="#home">Home</a>
+    <a mat-button href="#about">About</a>
+    <a mat-button href="#projects">Projects</a>
+    <a mat-button href="#skills">Skills</a>
+    <a mat-button href="#contact">Contact</a>
+  </nav>
+
+  <button mat-icon-button class="menu-btn" (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+```
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+</div>

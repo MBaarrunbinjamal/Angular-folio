@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Ensure header always stays above everything */
+app-header, .navbar {
+  position: relative;
+  z-index: 2000 !important;
+}
+
+/* Main 3D background container should stay below header */
+.a, .bg-3d, .container, .main, .image, .picture {
+  position: relative;
+  z-index: 1 !important;
+}
+
+/* Optional: keep 3D layers below main content */
+.bg-3d {
+  z-index: 0 !important;
+}
