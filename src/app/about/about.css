@@ -19,7 +19,7 @@ hr{
     margin-right: 20px;
 text-align: justify;
 font-style: times new roman;
-font-size: 15px;
+font-size: 18px;
     }
 .picture img{
     width: 300px;
@@ -44,14 +44,31 @@ font-size: 15px;
         box-shadow: #090010 0px 0px 10px;
 }
 .button1{
-    background-color: #ff00ff;
+    background-color:#320653;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 50px;
-    margin-top: 20px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.button1:hover{
+    background-color: transparent;
+   
+    border: 2px solid #320653;
+        box-shadow: #090010 0px 0px 10px;
+            color: aliceblue;
+}
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 

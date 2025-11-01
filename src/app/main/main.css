@@ -149,7 +149,7 @@
   }
 }
 .picture {
-  width: 300px;
+  width: 400px;
   height: auto;
   /* border-radius: 15px; */
   /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); */
@@ -349,4 +349,14 @@
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out;
   }
+}
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
