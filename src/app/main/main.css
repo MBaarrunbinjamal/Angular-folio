@@ -1,405 +1,406 @@
-/* ---------- Layout ---------- */
-.image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: -1;
-}
-
-.main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-  padding: 0 2rem;
-  flex-wrap: wrap;
-}
-
-/* ---------- Container ---------- */
-.a {
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-  color: white;
-  background: #090010; /* dark base for 3D effect */
-}
-
-/* ---------- 3D Background ---------- */
-.bg-3d {
-  position: absolute;
-  inset: 0;
-  perspective: 1200px;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.layer {
-  position: absolute;
-  inset: 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transform-style: preserve-3d;
-  pointer-events: none;
-}
-
-/* Back layer - deep slow glow */
-.layer-back {
-  background: radial-gradient(circle at 20% 20%, #330055, transparent 20%),
-              radial-gradient(circle at 80% 80%, #9b00b8, transparent 25%);
-  transform: translateZ(-100px) scale(1.3);
-  filter: blur(10px);
-  animation: floatBack 20s ease-in-out infinite;
-  opacity: 0.6;
-}
-
-/* Middle layer - subtle particles */
-.layer-middle {
-  background-image:
-    radial-gradient(circle at 50% 30%, rgba(255,0,255,0.08), transparent 12%),
-    radial-gradient(circle at 80% 70%, rgba(138,43,226,0.05), transparent 15%);
-  transform: translateZ(-40px) scale(1.1);
-  animation: floatMid 15s ease-in-out infinite;
-  opacity: 0.4;
-}
-
-/* Front layer - small floating highlights */
-.layer-front {
-  background-image:
-    radial-gradient(circle at 30% 50%, rgba(255,100,255,0.05), transparent 20%),
-    radial-gradient(circle at 70% 70%, rgba(180,0,255,0.05), transparent 20%);
-  transform: translateZ(20px) scale(1);
-  animation: floatFront 12s ease-in-out infinite;
-  opacity: 0.25;
-}
-
-/* Floating animations */
-@keyframes floatBack {
-  0% { transform: translateZ(-100px) translateY(0) scale(1.3); }
-  50% { transform: translateZ(-110px) translateY(-20px) scale(1.32); }
-  100% { transform: translateZ(-100px) translateY(0) scale(1.3); }
-}
-
-@keyframes floatMid {
-  0% { transform: translateZ(-40px) translateY(0) scale(1.1); }
-  50% { transform: translateZ(-50px) translateY(-15px) scale(1.12); }
-  100% { transform: translateZ(-40px) translateY(0) scale(1.1); }
-}
-
-@keyframes floatFront {
-  0% { transform: translateZ(20px) translateY(0) scale(1); }
-  50% { transform: translateZ(30px) translateY(-10px) scale(1.02); }
-  100% { transform: translateZ(20px) translateY(0) scale(1); }
-}
-
-/* ---------- Content ---------- */
-.container {
-  position: relative;
-  z-index: 2; /* above layers */
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ---------- Animated Gradient Text ---------- */
-.fade-text {
-  font-size: 2.4rem;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 18vh;
-  line-height: 1.1;
-  background: linear-gradient(45deg, #ff00ff, #8a2be2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-  text-shadow: 0 0 12px rgba(179, 0, 198, 0.4);
-}
-
-.fade-text.hidden {
-  opacity: 0;
-  transform: translateY(8px);
-}
-
-/* ---------- Responsive ---------- */
-@media (max-width: 992px) {
-  .main {
-    flex-direction: column;
+  /* ---------- Layout ---------- */
+  .image {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    height: auto;
-    padding: 2rem 1rem;
+    z-index: -1;
   }
+
+  .main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+  }
+
+  /* ---------- Container ---------- */
+  .a {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    color: white;
+    background: #090010; /* dark base for 3D effect */
+  }
+
+  /* ---------- 3D Background ---------- */
+  .bg-3d {
+    position: absolute;
+    inset: 0;
+    perspective: 1200px;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .layer {
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform-style: preserve-3d;
+    pointer-events: none;
+  }
+
+  /* Back layer - deep slow glow */
+  .layer-back {
+    background: radial-gradient(circle at 20% 20%, #330055, transparent 20%),
+                radial-gradient(circle at 80% 80%, #9b00b8, transparent 25%);
+    transform: translateZ(-100px) scale(1.3);
+    filter: blur(10px);
+    animation: floatBack 20s ease-in-out infinite;
+    opacity: 0.6;
+  }
+
+  /* Middle layer - subtle particles */
+  .layer-middle {
+    background-image:
+      radial-gradient(circle at 50% 30%, rgba(255,0,255,0.08), transparent 12%),
+      radial-gradient(circle at 80% 70%, rgba(138,43,226,0.05), transparent 15%);
+    transform: translateZ(-40px) scale(1.1);
+    animation: floatMid 15s ease-in-out infinite;
+    opacity: 0.4;
+  }
+
+  /* Front layer - small floating highlights */
+  .layer-front {
+    background-image:
+      radial-gradient(circle at 30% 50%, rgba(255,100,255,0.05), transparent 20%),
+      radial-gradient(circle at 70% 70%, rgba(180,0,255,0.05), transparent 20%);
+    transform: translateZ(20px) scale(1);
+    animation: floatFront 12s ease-in-out infinite;
+    opacity: 0.25;
+  }
+
+  /* Floating animations */
+  @keyframes floatBack {
+    0% { transform: translateZ(-100px) translateY(0) scale(1.3); }
+    50% { transform: translateZ(-110px) translateY(-20px) scale(1.32); }
+    100% { transform: translateZ(-100px) translateY(0) scale(1.3); }
+  }
+
+  @keyframes floatMid {
+    0% { transform: translateZ(-40px) translateY(0) scale(1.1); }
+    50% { transform: translateZ(-50px) translateY(-15px) scale(1.12); }
+    100% { transform: translateZ(-40px) translateY(0) scale(1.1); }
+  }
+
+  @keyframes floatFront {
+    0% { transform: translateZ(20px) translateY(0) scale(1); }
+    50% { transform: translateZ(30px) translateY(-10px) scale(1.02); }
+    100% { transform: translateZ(20px) translateY(0) scale(1); }
+  }
+
+  /* ---------- Content ---------- */
+  .container {
+    position: relative;
+    z-index: 2; /* above layers */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ---------- Animated Gradient Text ---------- */
   .fade-text {
-    font-size: 2rem;
-    margin-top: 10vh;
-  }
-  .image img {
-    max-width: 80%;
-    margin-top: 2rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .fade-text {
-    font-size: 1.6rem;
-    margin-top: 8vh;
-  }
-  .image img {
-    max-width: 100%;
-  }
-}
-.picture {
-  width: 400px;
-  height: auto;
-  /* border-radius: 15px; */
-  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-}
-.picture:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-}
-.mainbtn{
-  display: flex;
-  /* justify-content: center; */
-  margin-top: 20px;
-  gap: 20px;
-}
-.button1{
-  border-radius: 100px;
-  overflow: hidden;
-    background-color: #330055;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-}
-.button1:hover {
-    background-color: transparent;
-    border: solid 2px #330055;
-    color: #ff00ff;
-    box-shadow: #090010 0px 0px 10px;
-  
-}
-.button2{
-  border-radius: 100px;
-  overflow: hidden;
-    background-color:#9b00b8;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-} 
-.button2:hover {
-    background-color: transparent;
-    border: solid 2px #9b00b8 ;
-    color: #330055;
-    box-shadow: #090010 0px 0px 10px;
-    color: white;
-  
-}
-.hello{
-  font-size: 30px;
-  font-weight: 500;
-  
-  color: #ff00ff;
-}
-.line1{
-
-  border: 2px solid #ff00ff;
-  margin-top: 10px;
-  border-radius: 5px;
-}
-/* Fix image layering so it stays under the navbar */
-.image, .picture {
-  position: relative;
-  z-index: 1; /* ensures it stays above 3D bg but below navbar */
-}
-
-/* Make sure the 3D background stays below all content */
-.bg-3d {
-  z-index: 0;
-}
-
-/* Navbar stays on top of everything */
-/* ----------------------------------------------
- * Generated by Animista on 2025-10-29 21:32:12
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-
-/**
- * ----------------------------------------
- * animation bounce-in-bck
- * ----------------------------------------
- */
-@-webkit-keyframes bounce-in-bck {
-  0% {
-    -webkit-transform: scale(7);
-            transform: scale(7);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-    opacity: 0;
-  }
-  38% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  55% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  72% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  81% {
-    -webkit-transform: scale(1.24);
-            transform: scale(1.24);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  89% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  95% {
-    -webkit-transform: scale(1.04);
-            transform: scale(1.04);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-}
-.bounce-in-bck {
-	-webkit-animation: bounce-in-bck 1.1s both;
-	        animation: bounce-in-bck 1.1s both;
-          
-}
-@keyframes bounce-in-bck {
-  0% {
-    -webkit-transform: scale(7);
-            transform: scale(7);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-    opacity: 0;
-  }
-  38% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  55% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  72% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  81% {
-    -webkit-transform: scale(1.24);
-            transform: scale(1.24);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  89% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  95% {
-    -webkit-transform: scale(1.04);
-            transform: scale(1.04);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-}
-.bebas-neue-regular {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.pacifico-regular {
-  font-family: "Pacifico", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-.asd{
+    font-size: 2.4rem;
+    font-weight: 700;
     text-align: center;
-    margin-top: 20px;
-    border-radius: 20px;
-      background: rgba(255, 255, 255, 0.15); /* semi-transparent */
-  backdrop-filter: blur(10px);            /* main glass blur */
-  -webkit-backdrop-filter: blur(10px);    /* Safari support */
-  border: 1px solid rgba(255, 255, 255, 0.3);
-   margin: 5px;
-}
-.num{
-   text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 24px;
-   
-}
-.icon{
-    margin-top: 20px;
-    
-}
-.asd:hover{
+    margin-top: 18vh;
+    line-height: 1.1;
+    background: linear-gradient(45deg, #ff00ff, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    text-shadow: 0 0 12px rgba(179, 0, 198, 0.4);
+  }
+
+  .fade-text.hidden {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 992px) {
+    .main {
+      flex-direction: column;
+      justify-content: center;
+      height: auto;
+      padding: 2rem 1rem;
+    }
+    .fade-text {
+      font-size: 2rem;
+      margin-top: 10vh;
+    }
+    .image img {
+      max-width: 80%;
+      margin-top: 2rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .fade-text {
+      font-size: 1.6rem;
+      margin-top: 8vh;
+    }
+    .image img {
+      max-width: 100%;
+    }
+  }
+  .picture {
+    width: 400px;
+    height: auto;
+    /* border-radius: 15px; */
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  }
+  .picture:hover {
     transform: scale(1.05);
-    transition: transform 0.3s ease;
-        box-shadow: #090010 0px 10px 10px;
-}
-.soft{
-   font-size: 70px;
-  font-weight: 500;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  }
+  .mainbtn{
+    display: flex;
+    /* justify-content: center; */
+    margin-top: 20px;
+    gap: 20px;
+  }
+  .button1{
+    border-radius: 100px;
+    overflow: hidden;
+      background-color: #330055;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+  }
+  .button1:hover {
+      background-color: transparent;
+      border: solid 2px #330055;
+      color: #ff00ff;
+      box-shadow: #090010 0px 0px 10px;
+    
+  }
+  .button2{
+    border-radius: 100px;
+    overflow: hidden;
+      background-color:#9b00b8;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+  } 
+  .button2:hover {
+      background-color: transparent;
+      border: solid 2px #9b00b8 ;
+      color: #330055;
+      box-shadow: #090010 0px 0px 10px;
+      color: white;
+    
+  }
+  .hello{
+    font-size: 30px;
+    font-weight: 500;
+    
+    color: #ff00ff;
+  }
+  .line1{
+
+    border: 2px solid #ff00ff;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  /* Fix image layering so it stays under the navbar */
+  .image, .picture {
+    position: relative;
+    z-index: 1; /* ensures it stays above 3D bg but below navbar */
+  }
+
+  /* Make sure the 3D background stays below all content */
+  .bg-3d {
+    z-index: 0;
+  }
+
+  /* Navbar stays on top of everything */
+  /* ----------------------------------------------
+  * Generated by Animista on 2025-10-29 21:32:12
+  * Licensed under FreeBSD License.
+  * See http://animista.net/license for more info. 
+  * w: http://animista.net, t: @cssanimista
+  * ---------------------------------------------- */
+
+  /**
+  * ----------------------------------------
+  * animation bounce-in-bck
+  * ----------------------------------------
+  */
+  @-webkit-keyframes bounce-in-bck {
+    0% {
+      -webkit-transform: scale(7);
+              transform: scale(7);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    38% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+      opacity: 1;
+    }
+    55% {
+      -webkit-transform: scale(1.5);
+              transform: scale(1.5);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    72% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    81% {
+      -webkit-transform: scale(1.24);
+              transform: scale(1.24);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    89% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    95% {
+      -webkit-transform: scale(1.04);
+              transform: scale(1.04);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
+  .bounce-in-bck {
+    -webkit-animation: bounce-in-bck 1.1s both;
+            animation: bounce-in-bck 1.1s both;
+            
+  }
+  @keyframes bounce-in-bck {
+    0% {
+      -webkit-transform: scale(7);
+              transform: scale(7);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    38% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+      opacity: 1;
+    }
+    55% {
+      -webkit-transform: scale(1.5);
+              transform: scale(1.5);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    72% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    81% {
+      -webkit-transform: scale(1.24);
+              transform: scale(1.24);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    89% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    95% {
+      -webkit-transform: scale(1.04);
+              transform: scale(1.04);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
+  .bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .pacifico-regular {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .asd{
+      text-align: center;
+      margin-top: 20px;
+      border-radius: 20px;
+        background: rgba(255, 255, 255, 0.15); /* semi-transparent */
+    backdrop-filter: blur(10px);            /* main glass blur */
+    -webkit-backdrop-filter: blur(10px);    /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 5px;
+  }
+  .num{
+    text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-size: 24px;
+    
+  }
+  .icon{
+      margin-top: 20px;
+      
+  }
+  .asd:hover{
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+          box-shadow: #090010 0px 10px 10px;
+  }
+  .soft{
+    font-size: 70px;
+    font-weight: 500;
+    
+    color: white;
+    margin-bottom: 40px;
+  }
+  .c{
+    margin-right: 100px;
+    font-size: 40px;
+    font-weight: 600;
+    background: linear-gradient(45deg, #FF00FF, #8A2BE2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    letter-spacing: 0.8px;
+  }
   
-  color: white;
-  margin-bottom: 40px;
-}
-.c{
-  margin-right: 100px;
-   font-size: 40px;
-  font-weight: 600;
-  background: linear-gradient(45deg, #FF00FF, #8A2BE2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  cursor: pointer;
-  letter-spacing: 0.8px;
-}
