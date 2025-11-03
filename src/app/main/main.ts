@@ -22,36 +22,31 @@ export class Main implements OnInit {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      // delay slightly for DOM to fully load
-      setTimeout(() => this.animateText(), 200);
+      setTimeout(() => this.animateText(), 300);
     }
   }
 
   animateText() {
-    const fadeDuration = 800;  // must match CSS transition (0.8s)
-    const holdDuration = 2000; // visible duration before next change
-
+    const fadeDuration = 800;   // match with CSS transition (0.8s)
+    const holdDuration = 2000;  // how long text stays visible
     const textElement = document.getElementById('animatedText');
     if (!textElement) return;
 
-    const loop = () => {
+    // Start with first text
+    textElement.textContent = this.texts[this.index];
+    textElement.classList.remove('hidden');
+
+    // Infinite loop using setInterval
+    setInterval(() => {
       // Fade out
       textElement.classList.add('hidden');
 
+      // After fade-out, update and fade-in
       setTimeout(() => {
-        // Update text
         this.index = (this.index + 1) % this.texts.length;
         textElement.textContent = this.texts[this.index];
-
-        // Fade in
         textElement.classList.remove('hidden');
-
-        // Wait before looping again
-        setTimeout(loop, holdDuration + fadeDuration);
       }, fadeDuration);
-    };
-
-    // Start the infinite loop
-    loop();
+    }, fadeDuration + holdDuration);
   }
 }

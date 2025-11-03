@@ -45,7 +45,7 @@ mat-sidenav-content, main, section, .page-content {
 .logo {
   font-size: 1.5rem;
   font-weight: 600;
-  background: linear-gradient(45deg, #FF00FF, #8A2BE2);
+  background: linear-gradient(white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;

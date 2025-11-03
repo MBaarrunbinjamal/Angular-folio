@@ -1,12 +1,13 @@
 .headng{
-    font-size: 36px;
+    font-size: 50px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     
 }
 .a{
     margin-left: 30px;
     color: #ff00ff;
+     font-size: 60px;
 
 }
 
@@ -14,21 +15,23 @@ hr{
     margin-left: 20px;
     border: 1px solid #ff00ff;
     margin-bottom: 20px;}
-    .pa{
+.pa{
     margin-left: 30px;
     margin-right: 20px;
-text-align: justify;
-font-style: times new roman;
-font-size: 18px;
+    text-align: justify;
+    font-size: 15px;
+    color: rgba(220, 220, 220, 0.705);
     }
 .picture img{
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
-    margin-left: 50px;
-    margin-top: 20px;
+    margin-left: 70px;
+    margin-top: 100px;
     object-fit: cover;
         border: solid 2px #ff00ff;
+        justify-content: center;
+        align-items: center;
 }
 .acd{
     display: flex;
@@ -72,3 +75,66 @@ font-size: 18px;
   font-style: normal;
 }
 
+.roboto-flex-uniquifier{
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" 0,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    "YTLC" 514,
+    "YTUC" 712;
+}
+.bonny{
+    margin-left: 5px;
+    color: rgba(220, 220, 220, 0.705);
+  
+}
+.glass{
+    border-radius: 20px;
+      background: rgba(255, 255, 255, 0.15); /* semi-transparent */
+  backdrop-filter: blur(10px);            /* main glass blur */
+  -webkit-backdrop-filter: blur(10px); 
+  margin-left: 30px;
+  margin-right: 20px;
+  width: 50%;
+}
+glass:hover{
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+        box-shadow: #090010 0px 0px 10px;
+}
+ .chip {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      padding: .5rem 1rem;
+      border-radius: 50px;
+      font-size: .9rem;
+      color: #e5e9f2;
+      display: inline-flex;
+      align-items: center;
+      margin: 0 8px 8px 0;
+      transition: all 0.3s ease;
+    }
+     .chip:hover {
+      background: rgba(255,255,255,.1);
+      transform: translateY(-2px);
+    }
+     .chip i {
+      margin-right: 5px;
+    }
+    .lm{
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: justify;
+        font-size: 15px;
+        color: rgba(220, 220, 220, 0.705);
+    }
